@@ -3,16 +3,12 @@
 
 from lxml import etree
 import feedgenerator
-import urllib2
+import requests
 import os
 
 # fetch html page
-response = urllib2.urlopen('http://psi-im.org/')
-doc = response.read()
-
-# you may require an encoding change
-# e.g. latin1 -> unicode
-#doc = unicode(doc, 'latin1')
+response = requests.get('http://psi-im.org/')
+doc = response.text
 
 # get desired nodes 
 tree = etree.HTML(doc)
