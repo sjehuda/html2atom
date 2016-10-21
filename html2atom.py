@@ -34,19 +34,19 @@ feed = feedgenerator.Atom1Feed(
 for i in items:
   # get identifier
   ids = i.xpath('@href')
-  idposte = 'empty' if len(ids) == 0 else ids[0]
+  idposte = '' if len(ids) == 0 else ids[0]
 
   # get link
   links = i.xpath('@href')
-  link = 'empty' if len(links) == 0 else links[0]
+  link = '' if len(links) == 0 else links[0]
 
   # get description
   descriptions = i.xpath('small/text()')
-  description = 'empty' if len(descriptions) == 0 else descriptions[0]
+  description = '' if len(descriptions) == 0 else descriptions[0]
 
   # get title
   titles = i.xpath('text()')
-  title = 'empty' if len(titles) == 0 else titles[0]
+  title = '' if len(titles) == 0 else titles[0]
 
   feed.add_item(
         title = title,
